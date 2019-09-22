@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CountdownView" customModule="Preview" customModuleProvider="target">
+            <connections>
+                <outlet property="authorLabel" destination="eYc-oh-tAV" id="fB6-DE-5yl"/>
+                <outlet property="contentView" destination="A61-hi-kc2" id="5fR-Kj-egj"/>
+                <outlet property="quoteLabel" destination="3kt-XM-hKP" id="2YC-LR-EgD"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A61-hi-kc2">
+            <rect key="frame" x="0.0" y="0.0" width="1680" height="1050"/>
+            <subviews>
+                <textField autoresizesSubviews="NO" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-Hs-uJx">
+                    <rect key="frame" x="148" y="250" width="1384" height="550"/>
+                    <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                    <textFieldCell key="cell" allowsUndo="NO" alignment="center" title="Quote" id="3kt-XM-hKP">
+                        <font key="font" size="80" name="Herculanum"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField autoresizesSubviews="NO" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qt-xj-lgK">
+                    <rect key="frame" x="148" y="50" width="1384" height="150"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" allowsUndo="NO" alignment="right" title="Author" id="eYc-oh-tAV">
+                        <font key="font" size="40" name="Zapfino"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField autoresizesSubviews="NO" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXf-Ch-0Ur">
+                    <rect key="frame" x="-2" y="0.0" width="44" height="20"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" allowsUndo="NO" alignment="center" title="By Arbër" placeholderString="By Arbër" id="JYk-Dx-5YD">
+                        <font key="font" size="5" name="Zapfino"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+    </objects>
+</document>
