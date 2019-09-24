@@ -5,10 +5,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CountdownView" customModule="Preview" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="QuoteView" customModule="Preview" customModuleProvider="target">
             <connections>
                 <outlet property="authorLabel" destination="eYc-oh-tAV" id="fB6-DE-5yl"/>
                 <outlet property="contentView" destination="A61-hi-kc2" id="5fR-Kj-egj"/>
+                <outlet property="quoteField" destination="GJE-Hs-uJx" id="bOD-Zo-JP6"/>
                 <outlet property="quoteLabel" destination="3kt-XM-hKP" id="2YC-LR-EgD"/>
             </connections>
         </customObject>

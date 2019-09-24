@@ -13,6 +13,7 @@ final class QuoteView: ScreenSaverView {
     
     @IBOutlet var contentView: NSView!
     @IBOutlet var quoteLabel: NSTextFieldCell!
+    @IBOutlet var quoteField: NSTextField!
     @IBOutlet var authorLabel: NSTextFieldCell!
 
 
@@ -77,8 +78,11 @@ final class QuoteView: ScreenSaverView {
     override func animateOneFrame() {
         let randomQuote: quote = quotes.randomElement() ?? throwbackQuote
         
+        quoteLabel.font = self.calculateFont(toFit: quoteField, withString: randomQuote.Quote as NSString, minSize: 9, maxSize: 80)
+
         quoteLabel.stringValue = randomQuote.Quote
         authorLabel.stringValue = "- " + randomQuote.Character
+
 
         if (!loaded) {
             addSubview(contentView)
@@ -134,6 +138,8 @@ final class QuoteView: ScreenSaverView {
 
                 quotes.append( quote(Quote: quoteText, Character: quoteElement[1], Source: quoteElement[2]))
             }
+            quotes.removeFirst()
+            quotes.removeLast()
         } else { throwbackQuote.Quote = "Can't locate the quote-file :(" }
 
         let bundle = Bundle(for: type(of: self))
@@ -158,4 +164,19 @@ final class QuoteView: ScreenSaverView {
         }
         return result
     }
+    
+    func calculateFont(toFit textField: NSTextField, withString string: NSString, minSize min: Int, maxSize max: Int) -> NSFont {
+        // print(string)
+        for i in min...max {
+            let strSize = string.size(withAttributes: [NSAttributedString.Key.font: NSFont.systemFont(ofSize: CGFloat(i))])
+            let linesNumber = Int(textField.bounds.height/strSize.height) - 1
+            if strSize.width/CGFloat(linesNumber) > textField.bounds.width {
+                // print("Doesn't fit " + String(i-1));
+                return (i == min ? NSFont(name: "\(textField.font!.fontName)", size: CGFloat(min)) : NSFont(name: "\(textField.font!.fontName)", size: CGFloat(i-1)))!
+            }
+        }
+        // print("Fits " + String(max))
+        return NSFont(name: "\(textField.font!.fontName)", size: CGFloat(max))!
+    }
+    
 }
